@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'chat_project',
     'chat',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 ]
 ASGI_APPLICATION = 'chat_project.asgi.application'
 MIDDLEWARE = [
@@ -88,6 +88,15 @@ DATABASES = {
     
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+AUTH_USER_MODEL = 'chat.User'
+
 
 
 # Password validation
