@@ -17,7 +17,9 @@ def signup_view(request):
         email=email,
         password=password 
         )
-    token, _ = Token.objects.get_or_create(user=Client)
+    print("User created:", user)
+    token, _ = Token.objects.get_or_create(user=user)
+    print("User created:", user)
     return JsonResponse({'token': token.key})
 class Meta:
         app_label = 'chat'  # This moves the model under the "CHAT" section
