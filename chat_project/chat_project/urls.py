@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from chat.views import signup_view,message_view
+from chat.views.message_view import message_view, get_messages_by_conversation
+from chat.views.signup_view import signup_view
 from rest_framework.authtoken.views import obtain_auth_token
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('login/', obtain_auth_token, name='login'),
     path('chat_project', include('django.contrib.auth.urls')),
     path('send_message/', message_view, name='message_view'),
+    path('get_messages/', get_messages_by_conversation, name='get_messages_by_conversation'),
 ]
